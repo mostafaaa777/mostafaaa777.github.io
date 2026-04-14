@@ -26,8 +26,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    z-index: 100;
+    flex-wrap: wrap; /* Allows menu to wrap on small mobile */
 }
 
 header h2 {
@@ -57,16 +56,16 @@ a:hover {
     outline: 1px solid white;
 }
 
-/* --- Main Content (Stretches to push footer down) --- */
+/* --- Main Content (Fills space to push footer down) --- */
 main {
     flex: 1; 
     margin: 20px auto;
     padding: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     width: 95%;
 }
 
-/* --- Page 1: Home (Welcome & Cards) --- */
+/* --- Home Page (index.html) --- */
 .hello {
     text-align: center;
     background-color: white;
@@ -80,6 +79,7 @@ main {
     text-transform: capitalize;
     margin-bottom: 15px;
     color: #cfa12c;
+    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Scales based on screen size */
 }
 
 .hello p {
@@ -110,7 +110,7 @@ main {
     background-color: #4e4eff;
     color: white;
     border-radius: 15px;
-    flex: 1 1 300px; 
+    flex: 1 1 300px; /* Base size of 300px, but can grow/shrink */
     max-width: 450px;
     transition: 0.3s;
 }
@@ -120,20 +120,19 @@ main {
     transform: translateY(-5px);
 }
 
-/* --- Page 2: My Courses (Table Fixes) --- */
+/* --- Table Page (courses.html) --- */
 .tablee {
     width: 100%;
-    overflow-x: auto; /* Allows horizontal swipe on mobile */
+    overflow-x: auto; /* Adds horizontal scroll on mobile */
     background-color: white;
     border-radius: 15px;
     margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px; /* Keeps columns readable */
+    min-width: 600px; /* Prevents text from squishing on mobile */
 }
 
 .caption {
@@ -156,13 +155,14 @@ table td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #eee;
+    text-transform: capitalize;
 }
 
 table tr:hover {
     background-color: #f8f9ff;
 }
 
-/* --- Page 3 & 4: Forms & Contact --- */
+/* --- Add Course Page (add.html) --- */
 .main3 {
     background-color: white;
     border-radius: 15px;
@@ -171,6 +171,14 @@ table tr:hover {
     margin: 20px auto;
 }
 
+.main3 h2 {
+    color: #4e4eff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+/* Reusable Form Styles */
 label {
     color: #4e4eff;
     display: block;
@@ -189,24 +197,9 @@ input, textarea {
     outline: none;
 }
 
-.contact-main {
-    display: flex;
-    flex-wrap: wrap; 
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.info {
-    background-color: #4e4eff;
-    color: white;
-    padding: 40px;
-    flex: 1 1 300px;
-}
-
-.form {
-    padding: 40px;
-    flex: 1 1 400px;
+textarea {
+    height: 100px;
+    resize: vertical;
 }
 
 button, .send-btn {
@@ -217,7 +210,8 @@ button, .send-btn {
     border-radius: 15px;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    text-transform: capitalize;
 }
 
 button:hover {
@@ -231,6 +225,59 @@ button:hover {
     margin-top: 20px;
 }
 
+/* --- Contact Page (contact.html) --- */
+.contact-main {
+    display: flex;
+    flex-wrap: wrap; /* Stacks vertically on mobile */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0; /* Override main padding to keep colors separate */
+}
+
+.info {
+    background-color: #4e4eff;
+    color: white;
+    padding: 40px;
+    flex: 1 1 300px;
+}
+
+.info h3 {
+    color: #cfa12c;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.title-p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details .item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.details i {
+    color: #cfa12c;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    width: 25px; /* Keeps icons aligned */
+}
+
+.form {
+    padding: 40px;
+    flex: 1 1 400px;
+    background-color: white;
+}
+
+.form h2 {
+    color: #4e4eff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 /* --- Uniform Footers --- */
 footer, .footer1, .footer2, .footer3, .footer4 {
     background-color: #4e4eff;
@@ -238,14 +285,17 @@ footer, .footer1, .footer2, .footer3, .footer4 {
     text-align: center;
     padding: 20px;
     width: 100%;
+    margin-top: auto; /* Safety for sticky footer */
 }
 
 /* --- Responsive Media Queries --- */
+
+/* Tablet and Smaller (768px) */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         text-align: center;
-        padding: 15px;
+        padding: 1.5rem 5%;
     }
 
     header ul {
@@ -253,16 +303,27 @@ footer, .footer1, .footer2, .footer3, .footer4 {
         justify-content: center;
     }
 
+    .contact-main {
+        flex-direction: column; /* Forces stacking */
+    }
+
     .info, .form {
+        flex: 1 1 100%;
         padding: 25px;
-        flex: 1 1 100%; /* Stacks info above form */
     }
 
     .card {
-        flex: 1 1 100%; /* Stacks cards */
+        flex: 1 1 100%; /* Features stack one by one */
+    }
+}
+/* Mobile Phones (480px) */
+@media (max-width: 480px) {
+    a {
+        font-size: 16px;
+        padding: 6px 8px;
     }
 
-    .caption {
-        font-size: 1.4rem;
+    header h2 {
+        font-size: 1.2rem;
     }
 }
