@@ -1,329 +1,327 @@
-/* --- Global Resets & Sticky Footer Setup --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0.1px;
-}
-
-/* Ensure the page stretches to full screen height */
-html, body {
-    height: 100%;
-}
-
-body {
+body{
+    margin: 0px;
     background-color: #e3e7f1;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
-
-/* --- Header & Navigation --- */
-header {
+header{
     background-color: #4e4eff;
     color: white;
-    padding: 1rem 5%;
+    padding: 14px 28px 12px 28px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allows menu to wrap on small mobile */
 }
-
-header h2 {
+header h2{
     text-transform: capitalize;
-    font-size: 1.5rem;
 }
-
-ul {
+ul{
     list-style-type: none;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: flex-end;
 }
-
-a {
+a{
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    padding: 8px 12px;
+    font-size: 20px;
+    padding: 11px;
     border-radius: 10px;
     transition: 0.3s;
 }
-
-a:hover {
+a:hover{
     background-color: #3b3bff;
-    outline: 1px solid white;
+    border-radius: 15px;
+    border: 1px solid white;
+    padding: 10px;
+    transition: 0.3s;
 }
-
-/* --- Main Content (Fills space to push footer down) --- */
-main {
-    flex: 1; 
-    margin: 20px auto;
+main{
+    margin: auto;
     padding: 20px;
-    max-width: 1000px;
-    width: 95%;
+    color: white;
+    max-width: 850px;
 }
-
-/* --- Home Page (index.html) --- */
-.hello {
+.hello{
     text-align: center;
     background-color: white;
-    padding: 40px 20px;
-    margin-bottom: 30px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 20px;
     transition: 0.3s;
 }
-
-.hello h1 {
-    text-transform: capitalize;
-    margin-bottom: 15px;
-    color: #cfa12c;
-    font-size: clamp(1.5rem, 5vw, 2.5rem); /* Scales based on screen size */
+.hello:hover{
+    transition: 0.3s;
+    background-color: whitesmoke;
+    outline: 2px solid #cfa12c;
+    transform: translate(-3px);
 }
-
-.hello p {
+.hello h1{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #cfa12c;
+}
+.hello p{
     color: #4e4eff;
 }
-
-.features {
+.features{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 35px;
     justify-content: center;
 }
-
-.feature_title {
-    width: 100%;
-    text-align: center;
-    color: #4e4eff;
-    background: white;
-    padding: 10px;
-    border-radius: 15px;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
-
-.card {
-    padding: 25px;
+.card{
+    padding: 0px 0px 3px 20px;
     background-color: #4e4eff;
-    color: white;
     border-radius: 15px;
-    flex: 1 1 300px; /* Base size of 300px, but can grow/shrink */
-    max-width: 450px;
+    width: calc((850px - 35px - 40px)/2);
     transition: 0.3s;
 }
-
-.card:hover {
+.card:hover{
     background-color: #3b3bff;
-    transform: translateY(-5px);
-}
-
-/* --- Table Page (courses.html) --- */
-.tablee {
-    width: 100%;
-    overflow-x: auto; /* Adds horizontal scroll on mobile */
-    background-color: white;
-    border-radius: 15px;
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px; /* Prevents text from squishing on mobile */
-}
-
-.caption {
-    color: #4e4eff;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 20px 0;
-    font-size: 1.8rem;
-}
-
-table th {
-    color: #cfa12c;
-    background-color: #4e4eff;
-    padding: 15px;
-    text-transform: uppercase;
-}
-
-table td {
-    color: #4e4eff;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    text-transform: capitalize;
-}
-
-table tr:hover {
-    background-color: #f8f9ff;
-}
-
-/* --- Add Course Page (add.html) --- */
-.main3 {
-    background-color: white;
-    border-radius: 15px;
-    padding: 30px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.main3 h2 {
-    color: #4e4eff;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-}
-
-/* Reusable Form Styles */
-label {
-    color: #4e4eff;
-    display: block;
-    font-weight: bold;
-    margin: 15px 0 5px;
-    text-transform: capitalize;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cfa12c;
-    border-radius: 10px;
-    background: #eee;
-    font-size: 16px;
-    outline: none;
-}
-
-textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-button, .send-btn {
-    background-color: #4e4eff;
-    color: white;
-    padding: 12px 30px;
-    border: 1px solid #cfa12c;
-    border-radius: 15px;
-    cursor: pointer;
     transition: 0.3s;
-    font-size: 1.1rem;
-    text-transform: capitalize;
+    transform: translate(-2px);
 }
-
-button:hover {
-    background-color: #3b3bff;
-    transform: translateY(-2px);
-}
-
-.but3, .but4 {
+.features h2{
+    font-size: 28px;
+    color: #4e4eff;
+    width: 25%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    text-transform: capitalize;
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 0px;
+    margin: 30px 196px -20px 196px;
 }
-
-/* --- Contact Page (contact.html) --- */
-.contact-main {
+.footer1{
     display: flex;
-    flex-wrap: wrap; /* Stacks vertically on mobile */
-    background: white;
+    flex-wrap: wrap;
+    background-color: #4e4eff;
+    color: white;
+    margin-top: 94px;
+    height: 46px;
+    justify-content: center;
+    align-content: center;
+}
+table{
+    width: 100%;
+    background-color: white;
+    border-spacing: 0px;
+    border: none;
     border-radius: 15px;
     overflow: hidden;
-    padding: 0; /* Override main padding to keep colors separate */
+    margin: 35px auto;
+}
+.caption{
+    color: white;
+    text-transform: uppercase;
+    margin: 25px 10px -15px 20px;
+}
+table th{
+    color: #cfa12c;
+    text-align: center;
+    background-color: #4e4eff;
+    padding: 18px 20px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+ table td{
+    color: #4e4eff;
+    padding: 20px 10px;
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    text-transform: capitalize;
+}
+table tr{
+    transition: 0.3s;
+}
+table tr:hover{
+    background-color: #eee;
+    transition: 0.3s;
 }
 
-.info {
+.footer2{
+    display: flex;
+    flex-wrap: wrap;
     background-color: #4e4eff;
     color: white;
-    padding: 40px;
-    flex: 1 1 300px;
+    margin-top: 137px;
+    height: 46px;
+    justify-content: center;
+    align-content: center;
 }
-
-.info h3 {
-    color: #cfa12c;
+.main3{
+  background-color: white;
+    border-radius: 15px;
+    margin: 10% auto;
+    width: 500px;
+    max-width: 58%;
+}
+.main3 h2{
+    color: #4e4eff;
+    text-transform: capitalize;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
-
-.title-p {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.details .item {
+label{
+   color: #4e4eff;
     display: flex;
-    align-items: center;
-    margin: 20px 0;
+    font-size: 20px;
+    padding: 15px 0px;
+    text-transform: capitalize;
+    margin: 0px 0px -4px 5px;
 }
-
-.details i {
+.main3 input{
+    border-radius: 15px;
+    border: 1px solid #cfa12c;
+    outline: none;
+    width: 100%;
+    background-color: #eee;
+    height: 35px;
+    padding: 2px 0px 2px 5px;
+    color: #4e4eff;
+    font-size: 16px;
+}
+textarea{
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid #cfa12c;
+    height: 80px;
+    background-color: #eee;
+    padding: 5px 0px 5px 5px;
+    color: #4e4eff;
+    font-size: 16px;
+}
+button{
+    width: fit-content;
+    background-color: #4e4eff;
+    color: white;
+    padding: 15px 15px;
+    outline: none;
+    border: 1px solid #cfa12c;
+    border-radius: 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: #3b3bff;
+    transition: 0.3s;
+    transform: translateY(-2px);
+    border: 1px solid #cfa12c;
+}
+.footer3{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #4e4eff;
+    color: white;
+    margin-top: 53px;
+    height: 46px;
+    justify-content: center;
+    align-content: center;
+}
+.contact-main{
+    display: flex;
+    border-radius: 15px;
+    margin: 5% auto;
+}
+.info{
+    background-color: #4e4eff;
+    width: 40%;
+    border-radius: 15px 0px 0px 15px;
+}
+.info h3{
     color: #cfa12c;
-    margin-right: 15px;
-    font-size: 1.2rem;
-    width: 25px; /* Keeps icons aligned */
+    text-transform: capitalize;
+    text-align: center;
+    padding-top: 70px;
 }
+.info .title-p{
+    text-align: center;
+    margin-top: -10px;
+}
+.details span{
+    padding: 0px 0px 0px 20px;
 
-.form {
-    padding: 40px;
-    flex: 1 1 400px;
+}
+.details .item{
+   padding: 5% 5% 3% 0%;
+    display: flex;
+
+}
+.details i{
+    padding: 0px 0px 0px 20px;
+    color: #cfa12c;
+}
+.form{
     background-color: white;
+    width: 60%;
+    border-radius:0px 15px 15px 0px;
+    z-index: 10;
 }
-
-.form h2 {
+.form h2{
     color: #4e4eff;
     text-align: center;
-    margin-bottom: 20px;
 }
-
-/* --- Uniform Footers --- */
-footer, .footer1, .footer2, .footer3, .footer4 {
+.form label{
+    padding: 15px 0px 15px 20px;
+    font-weight: bold;
+}
+.form input{
+    padding: 15px 0px 15px 10px;
+    width: 90%;
+    background-color: #eee;
+    margin: 0% 4% 0% 4%;
+    border: 1px solid #cfa12c;
+    border-radius: 15px;
+    outline: none;
+}
+.form textarea{
+    width: 90%;
+    margin: 0% 4% 0% 4%;
+    outline: none; 
+}
+.form .send-btn{
+     width: fit-content;
     background-color: #4e4eff;
     color: white;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    margin-top: auto; /* Safety for sticky footer */
+    padding: 15px 15px;
+    outline: none;
+    border: 1px solid #cfa12c;
+    border-radius: 15px;
+    font-size: 20px;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.3s;
 }
-
-/* --- Responsive Media Queries --- */
-
-/* Tablet and Smaller (768px) */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem 5%;
-    }
-
-    header ul {
-        margin-top: 15px;
-        justify-content: center;
-    }
-
-    .contact-main {
-        flex-direction: column; /* Forces stacking */
-    }
-
-    .info, .form {
-        flex: 1 1 100%;
-        padding: 25px;
-    }
-
-    .card {
-        flex: 1 1 100%; /* Features stack one by one */
-    }
+.form .send-btn:hover{
+    background-color: #3b3bff;
+    transition: 0.3s;
+    transform: translateY(-2px);
+    border: 1px solid #cfa12c;    
 }
-/* Mobile Phones (480px) */
-@media (max-width: 480px) {
-    a {
-        font-size: 16px;
-        padding: 6px 8px;
-    }
-
-    header h2 {
-        font-size: 1.2rem;
-    }
+.footer4{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #4e4eff;
+    color: white;
+    margin: 11% 0% 0% 0%;
+    /* height: 46px; */
+    justify-content: center;
+    align-content: center;
+}
+.tablee{
+    overflow-x: auto;
+}
+.but3{
+   display: flex;
+   justify-content: center;   
+   margin-top: 5%;
+   margin-bottom: 0%;
+}
+.but4{
+    display: flex;
+    justify-content: center;
 }
