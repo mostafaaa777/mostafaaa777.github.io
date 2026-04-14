@@ -1,14 +1,20 @@
-/* --- Global Resets --- */
+/* --- Global Resets & Sticky Footer Setup --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #e3e7f1;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Forces body to be at least screen height */
 }
 
 /* --- Header & Navigation --- */
@@ -19,7 +25,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allows wrap on small mobile */
+    flex-wrap: wrap;
 }
 
 header h2 {
@@ -48,15 +54,16 @@ a:hover {
     outline: 1px solid white;
 }
 
-/* --- Main Layout Container --- */
+/* --- Main Content (The "Sticky" Part) --- */
 main {
+    flex: 1; /* Pushes the footer down by taking up all available space */
     margin: 20px auto;
     padding: 20px;
-    max-width: 1000px; /* Increased slightly for better desktop spacing */
+    max-width: 1000px;
     width: 95%;
 }
 
-/* --- Home Page (Welcome & Features) --- */
+/* --- Home Page Styles --- */
 .hello {
     text-align: center;
     background-color: white;
@@ -64,12 +71,6 @@ main {
     margin-bottom: 30px;
     border-radius: 20px;
     transition: 0.3s;
-}
-
-.hello:hover {
-    background-color: whitesmoke;
-    outline: 2px solid #cfa12c;
-    transform: translateY(-3px);
 }
 
 .hello h1 {
@@ -105,7 +106,7 @@ main {
     background-color: #4e4eff;
     color: white;
     border-radius: 15px;
-    flex: 1 1 300px; /* Grows, shrinks, and stays around 300px */
+    flex: 1 1 300px; /* Adapts automatically to 1, 2, or 3 cards */
     max-width: 450px;
     transition: 0.3s;
 }
@@ -115,10 +116,10 @@ main {
     transform: translateY(-5px);
 }
 
-/* --- Tables (My Courses) --- */
+/* --- Table Styles --- */
 .tablee {
     width: 100%;
-    overflow-x: auto; /* Essential for mobile table viewing */
+    overflow-x: auto;
     margin-top: 20px;
 }
 
@@ -128,21 +129,13 @@ table {
     border-collapse: collapse;
     border-radius: 15px;
     overflow: hidden;
-    min-width: 600px; /* Keeps table from getting too squashed */
-}
-
-.caption {
-    color: #4e4eff;
-    text-transform: uppercase;
-    text-align: center;
-    margin: 20px 0;
+    min-width: 600px;
 }
 
 table th {
     color: #cfa12c;
     background-color: #4e4eff;
     padding: 15px;
-    text-transform: uppercase;
 }
 
 table td {
@@ -152,23 +145,13 @@ table td {
     border-bottom: 1px solid #eee;
 }
 
-table tr:hover {
-    background-color: #f2f2f2;
-}
-
-/* --- Form (Add Course) --- */
+/* --- Form & Add Course --- */
 .main3 {
     background-color: white;
     border-radius: 15px;
     padding: 30px;
     max-width: 600px;
     margin: 20px auto;
-}
-
-.main3 h2 {
-    color: #4e4eff;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 label {
@@ -184,13 +167,8 @@ input, textarea {
     border: 1px solid #cfa12c;
     border-radius: 10px;
     background: #eee;
-    outline: none;
     font-size: 16px;
-}
-
-textarea {
-    height: 100px;
-    resize: vertical;
+    outline: none;
 }
 
 button {
@@ -199,30 +177,27 @@ button {
     padding: 12px 30px;
     border: 1px solid #cfa12c;
     border-radius: 15px;
-    font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
-    margin-top: 20px;
 }
 
 button:hover {
     background-color: #3b3bff;
-    transform: translateY(-2px);
 }
 
 .but3, .but4 {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 /* --- Contact Page --- */
 .contact-main {
     display: flex;
-    flex-wrap: wrap; /* Stacks on mobile */
+    flex-wrap: wrap;
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    padding: 0;
 }
 
 .info {
@@ -230,11 +205,6 @@ button:hover {
     color: white;
     padding: 40px;
     flex: 1 1 300px;
-}
-
-.info h3 {
-    color: #cfa12c;
-    margin-bottom: 10px;
 }
 
 .details .item {
@@ -246,7 +216,6 @@ button:hover {
 .details i {
     color: #cfa12c;
     margin-right: 15px;
-    width: 20px;
 }
 
 .form {
@@ -254,17 +223,16 @@ button:hover {
     flex: 1 1 400px;
 }
 
-/* --- Footers --- */
-footer {
+/* --- Uniform Footer --- */
+footer, .footer1, .footer2, .footer3, .footer4 {
     background-color: #4e4eff;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+    padding: 20px;
+    width: 100%;
 }
 
-/* --- Responsive Adjustments (Media Queries) --- */
-
+/* --- Responsive Media Queries --- */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -279,15 +247,8 @@ footer {
     .info, .form {
         padding: 25px;
     }
-}
-
-@media (max-width: 480px) {
-    a {
-        font-size: 16px;
-        padding: 5px;
-    }
     
-    .hello h1 {
-        font-size: 22px;
+    .card {
+        max-width: 100%;
     }
 }
