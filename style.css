@@ -217,7 +217,8 @@ button:hover{
     flex-wrap: wrap;
     background-color: #4e4eff;
     color: white;
-    margin-top: 74px;
+    margin-top: 53px;
+    height: 46px;
     justify-content: center;
     align-content: center;
 }
@@ -323,4 +324,30 @@ button:hover{
 .but4{
     display: flex;
     justify-content: center;
+}
+@media (max-width: 768px){
+    .contact-main{
+        flex-direction: column;
+        width: 80%;
+        justify-content: center;
+    }
+}
+@media (max-width: 768px){
+    .info{
+        width: 80%;
+        border-radius: 15px 15px 0px 0px;
+        margin: auto;
+    }
+}
+@media (max-width: 768px){
+    .form{
+       width: 80%;
+       border-radius: 0px 0px 15px 15px;
+       margin: auto;
+    }
+}
+@media (max-width: 768px){
+    .h3p-info{
+        margin-top: -10%;
+    }
 }
