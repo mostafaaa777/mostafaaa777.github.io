@@ -1,340 +1,293 @@
-body{
-    margin: 0px;
-    background-color: #e3e7f1;
-
+/* --- Global Resets --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-header{
+
+body {
+    background-color: #e3e7f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Header & Navigation --- */
+header {
     background-color: #4e4eff;
     color: white;
-    padding: 14px 28px 12px 28px;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrap on small mobile */
 }
-header h2{
+
+header h2 {
     text-transform: capitalize;
 }
-ul{
-   list-style-type: none;
+
+ul {
+    list-style-type: none;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: flex-end;
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
-    font-size: 20px;
-    padding: 11px;
+    font-size: 18px;
+    padding: 8px 12px;
     border-radius: 10px;
     transition: 0.3s;
 }
-a:hover{
+
+a:hover {
     background-color: #3b3bff;
-    border-radius: 15px;
-    border: 1px solid white;
-    padding: 10px;
-    transition: 0.3s;
+    outline: 1px solid white;
 }
-main{
-    margin: auto;
+
+/* --- Main Layout Container --- */
+main {
+    margin: 20px auto;
     padding: 20px;
-    color: white;
-    max-width: 850px;
+    max-width: 1000px; /* Increased slightly for better desktop spacing */
+    width: 95%;
 }
-.hello{
+
+/* --- Home Page (Welcome & Features) --- */
+.hello {
     text-align: center;
     background-color: white;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    margin-bottom: 30px;
     border-radius: 20px;
     transition: 0.3s;
 }
-.hello:hover{
-    transition: 0.3s;
+
+.hello:hover {
     background-color: whitesmoke;
     outline: 2px solid #cfa12c;
-    transform: translate(-3px);
+    transform: translateY(-3px);
 }
-.hello h1{
+
+.hello h1 {
     text-transform: capitalize;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: #cfa12c;
 }
-.hello p{
+
+.hello p {
     color: #4e4eff;
 }
-.features{
+
+.features {
     display: flex;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 20px;
     justify-content: center;
 }
-.card{
-    padding: 0px 0px 3px 20px;
-    background-color: #4e4eff;
+
+.feature_title {
+    width: 100%;
+    text-align: center;
+    color: #4e4eff;
+    background: white;
+    padding: 10px;
     border-radius: 15px;
-    width: calc((850px - 35px - 40px)/2);
-    transition: 0.3s;
-}
-.card:hover{
-    background-color: #3b3bff;
-    transition: 0.3s;
-    transform: translate(-2px);
-}
-.features h2{
-    font-size: 28px;
-    color: #4e4eff;
-    width: 25%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     text-transform: capitalize;
-    background-color: white;
-    border-radius: 15px;
-    padding: 10px 0px;
-    margin: 30px 196px -20px 196px;
+    margin-bottom: 10px;
 }
-.footer1{
-    display: flex;
-    flex-wrap: wrap;
+
+.card {
+    padding: 25px;
     background-color: #4e4eff;
     color: white;
-    margin-top: 94px;
-    height: 46px;
-    justify-content: center;
-    align-content: center;
+    border-radius: 15px;
+    flex: 1 1 300px; /* Grows, shrinks, and stays around 300px */
+    max-width: 450px;
+    transition: 0.3s;
 }
-table{
+
+.card:hover {
+    background-color: #3b3bff;
+    transform: translateY(-5px);
+}
+
+/* --- Tables (My Courses) --- */
+.tablee {
+    width: 100%;
+    overflow-x: auto; /* Essential for mobile table viewing */
+    margin-top: 20px;
+}
+
+table {
     width: 100%;
     background-color: white;
-    border-spacing: 0px;
-    border: none;
+    border-collapse: collapse;
     border-radius: 15px;
     overflow: hidden;
-    margin: 35px auto;
+    min-width: 600px; /* Keeps table from getting too squashed */
 }
-.caption{
-    color: white;
+
+.caption {
+    color: #4e4eff;
     text-transform: uppercase;
-    margin: 9% 0% -8% 25%;
-}
-table th{
-    color: #cfa12c;
     text-align: center;
+    margin: 20px 0;
+}
+
+table th {
+    color: #cfa12c;
     background-color: #4e4eff;
-    padding: 18px 20px;
+    padding: 15px;
     text-transform: uppercase;
-    font-size: 18px;
-}
- table td{
-    color: #4e4eff;
-    padding: 20px 10px;
-    text-align: center;
-    border-bottom: 2px solid #eee;
-    text-transform: capitalize;
-}
-table tr{
-    transition: 0.3s;
-}
-table tr:hover{
-    background-color: #eee;
-    transition: 0.3s;
 }
 
-.footer2{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #4e4eff;
-    color: white;
-    margin-top: 12%;
-    justify-content: center;
-    align-content: center;
-}
-.main3{
-   background-color: white;
-    border-radius: 15px;
-    margin: 15px auto;
-    width: 50%;
-    max-width: 50%;
-}
-.main3 h2{
+table td {
     color: #4e4eff;
-    text-transform: capitalize;
+    padding: 15px;
     text-align: center;
-    margin-bottom: 0px;
+    border-bottom: 1px solid #eee;
 }
-label{
-   color: #4e4eff;
-    display: flex;
-    font-size: 20px;
-    padding: 15px 0px;
-    text-transform: capitalize;
-    margin: 0px 0px -4px 5px;
-}
-.main3 input{
-    border-radius: 15px;
-    border: 1px solid #cfa12c;
-    outline: none;
-    width: 100%;
-    background-color: #eee;
-    height: 35px;
-    padding: 2px 0px 2px 5px;
-    color: #4e4eff;
-    font-size: 16px;
-}
-textarea{
-    width: 100%;
-    border-radius: 15px;
-    outline: none;
-    border: 1px solid #cfa12c;
-    height: 80px;
-    background-color: #eee;
-    padding: 5px 0px 5px 5px;
-    color: #4e4eff;
-    font-size: 16px;
-}
-button{
-   width: fit-content;
-    background-color: #4e4eff;
-    color: white;
-    padding: 15px 15px;
-    outline: none;
-    border: 1px solid #cfa12c;
-    border-radius: 15px;
-    font-size: 20px;
-    text-transform: capitalize;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover{
-    background-color: #3b3bff;
-    transition: 0.3s;
-    transform: translateY(-2px);
-    border: 1px solid #cfa12c;
-}
-.footer3{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #4e4eff;
-    color: white;
-    margin-top: 53px;
-    height: 46px;
-    justify-content: center;
-    align-content: center;
-}
-.contact-main{
-    display: flex;
-    border-radius: 15px;
-    margin: 3% auto;
-}
-.info{
-    background-color: #4e4eff;
-    width: 40%;
-    border-radius: 15px 0px 0px 15px;
-}
-.info h3{
-    color: #cfa12c;
-    text-transform: capitalize;
-    text-align: center;
-    padding-top: 70px;
-}
-.info .title-p{
-    text-align: center;
-    margin-top: -4%;
-}
-.details span{
-   padding: 0% 5% 0% 5%;
 
+table tr:hover {
+    background-color: #f2f2f2;
 }
-.details .item{
-   padding: 3% 5% 5% 5%;
-    display: flex;
 
-}
-.details i{
-    padding: 0px 0px 0px 20px;
-    color: #cfa12c;
-}
-.form{
+/* --- Form (Add Course) --- */
+.main3 {
     background-color: white;
-    width: 60%;
-    border-radius:0px 15px 15px 0px;
-    z-index: 10;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
 }
-.form h2{
+
+.main3 h2 {
     color: #4e4eff;
     text-align: center;
+    margin-bottom: 20px;
 }
-.form label{
-    padding: 15px 0px 15px 20px;
+
+label {
+    color: #4e4eff;
+    display: block;
     font-weight: bold;
+    margin: 15px 0 5px;
 }
-.form input{
-    padding: 3% 3% 3% 3%;
-    width: 90%;
-    background-color: #eee;
-    margin: 0% 5% 0% 2%;
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
     border: 1px solid #cfa12c;
-    border-radius: 15px;
+    border-radius: 10px;
+    background: #eee;
     outline: none;
+    font-size: 16px;
 }
-.form textarea{
-    width: 90%;
-    margin: 0% 3% 0% 3%;
-    outline: none;  
+
+textarea {
+    height: 100px;
+    resize: vertical;
 }
-.form .send-btn{
-     width: fit-content;
+
+button {
     background-color: #4e4eff;
     color: white;
-    padding: 15px 15px;
-    outline: none;
+    padding: 12px 30px;
     border: 1px solid #cfa12c;
     border-radius: 15px;
-    font-size: 20px;
-    text-transform: capitalize;
+    font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 20px;
 }
-.form .send-btn:hover{
+
+button:hover {
     background-color: #3b3bff;
-    transition: 0.3s;
     transform: translateY(-2px);
-    border: 1px solid #cfa12c;    
 }
-.footer4{
+
+.but3, .but4 {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --- Contact Page --- */
+.contact-main {
+    display: flex;
+    flex-wrap: wrap; /* Stacks on mobile */
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.info {
     background-color: #4e4eff;
     color: white;
-    margin-top: 5.45%;
-    /* height: 46px; */
-    justify-content: center;
-    align-content: end;
+    padding: 40px;
+    flex: 1 1 300px;
 }
-.foot3{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: end;
-    justify-content: center;
+
+.info h3 {
+    color: #cfa12c;
+    margin-bottom: 10px;
 }
-.but3{
+
+.details .item {
     display: flex;
-    flex-wrap: wrap;
-    /* align-content: center; */
-    justify-content: center;
-    margin-top: 2%;
+    align-items: center;
+    margin: 20px 0;
 }
-.tablee{
-    display: flex;
-    margin: 0% -17% 0% 17%;
-    padding: 5% 0% 0% 5%;
+
+.details i {
+    color: #cfa12c;
+    margin-right: 15px;
+    width: 20px;
 }
-.but4{
-    margin: 1% 29% 2% 29%;
-    display: flex;
-    flex-wrap: wrap;
-    /* align-content: center; */
-    justify-content: center;
+
+.form {
+    padding: 40px;
+    flex: 1 1 400px;
+}
+
+/* --- Footers --- */
+footer {
+    background-color: #4e4eff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .info, .form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    a {
+        font-size: 16px;
+        padding: 5px;
+    }
+    
+    .hello h1 {
+        font-size: 22px;
+    }
 }
