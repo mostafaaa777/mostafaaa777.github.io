@@ -9,6 +9,11 @@ header{
     display: flex;
     justify-content: space-between;
 }
+@media (max-width: 768px){
+    header{
+
+    }
+}
 header h2{
     text-transform: capitalize;
 }
@@ -153,7 +158,7 @@ table tr:hover{
 .main3{
   background-color: white;
     border-radius: 15px;
-    margin: 10% auto;
+    margin: 5% auto;
     width: 500px;
     max-width: 58%;
 }
@@ -217,8 +222,7 @@ button:hover{
     flex-wrap: wrap;
     background-color: #4e4eff;
     color: white;
-    margin-top: 53px;
-    height: 46px;
+    margin-top: 6%;
     justify-content: center;
     align-content: center;
 }
@@ -327,21 +331,25 @@ button:hover{
 }
 @media (max-width: 768px){
     .contact-main{
-        flex-direction: column;
         width: 80%;
         justify-content: center;
     }
 }
-@media (max-width: 768px){
+@media (max-width: 430px){
+    .contact-main{
+        flex-direction: column;
+    }
+}
+@media (max-width: 430px){
     .info{
-        width: 80%;
+        width: 100%;
         border-radius: 15px 15px 0px 0px;
         margin: auto;
     }
 }
-@media (max-width: 768px){
+@media (max-width: 430px){
     .form{
-       width: 80%;
+       width: 100%;
        border-radius: 0px 0px 15px 15px;
        margin: auto;
     }
@@ -349,5 +357,31 @@ button:hover{
 @media (max-width: 768px){
     .h3p-info{
         margin-top: -10%;
+    }
+}
+@media (max-width: 768px){
+    .main3{
+        max-width: 85%;
+        font-size: 16px;
+    }
+}
+@media (max-width: 430px){
+    header{
+        flex-direction: column;
+    }
+}
+@media (max-width: 430px){
+    header h2{ 
+        margin-bottom: 0%;
+        display: flex;
+        flex-wrap: wrap;
+        /* align-content: center; */
+        justify-content: center;
+    }
+}
+@media (max-width: 430px){
+    ul{
+        flex-direction: column;
+        align-content: center;
     }
 }
