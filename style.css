@@ -9,11 +9,6 @@ header{
     display: flex;
     justify-content: space-between;
 }
-@media (max-width: 768px){
-    header{
-
-    }
-}
 header h2{
     text-transform: capitalize;
 }
@@ -95,7 +90,7 @@ main{
     text-transform: capitalize;
     background-color: white;
     border-radius: 15px;
-    padding: 10px 0px;
+    padding: 10px 5px;
     margin: 30px 196px -20px 196px;
     white-space: nowrap;
 }
@@ -328,11 +323,6 @@ button:hover{
 .but4{
     display: flex;
     justify-content: center;
-}
-@media (max-width: 768px){
-    .contact-main{
-        
-    }
 }
 @media (max-width: 430px){
     .contact-main{
